@@ -84,15 +84,15 @@ code:
 		* 创建HTML的文件后，可以选择打开方式，设置默认的打开方式。
 			* Window—preferences—General—Editors—File Associations—选择*.html—选择MyEclipse HTML Editor—选择default—选择ok
 
-![](http://3)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170110134024.png)
 
 创建web项目
 
-![](http://1)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170110132252.png)
 
 创建xml文件
 
-![](http://2)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170110132501.png)
 
 步骤：
 
