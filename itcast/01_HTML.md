@@ -29,6 +29,8 @@ code:
 
 ### HTML的基本格式
 
+<a name="top">这是顶部</a>
+
 
 code:
 
@@ -151,15 +153,346 @@ code:
 
 ## 04-字体标签
 
+* 字体标签
+
+		* <font>字体的内容</font>
+		* 字体标签：
+		* <font></font>
+		* color:	颜色
+		* size：		字体的大小
+			* 最大值和最小值
+				* 最小值是：1
+				* 最大值是：7,如果想更大，就使用css
+			* 默认值：	3
+				* 值的写法	+2-->（3+2）
+		* face：		字体的类型
+
+* 标题标签
+
+		* <h1></h1>
+			...
+		  <h6></h6>	
+		* 特点：逐渐缩小
+
+* 粗体
+
+		<b></b>
+		
+* 斜体	
+
+		* <i></i>
+		* 标签可以嵌套的
+			<b><i>文本的内容</i></b>
+			
+* 特殊字符
+
+		* <		&lt;
+		* >		&gt;
+		* & 	&amp;
 
 
+		3<4 6>2 ----ok
+		
+		2<a b>4 ----no
 
+
+* 滚动的字幕
+
+		* <marquee>我是测试文本</marquee>
+
+滚动的字幕效果：
+
+<marquee>我是测试文本</marquee>
 
 ## 05-列表标签
+
+> 是为了数据格式化列表
+			
+第一种code：
+
+		<dl>
+			<dt>上层项目</dt>
+			<dd>下层项目</dd>
+			<dd>下层项目</dd>
+		</dl>
+			
+效果（自动对齐，缩进的）：
+
+<dl>
+	<dt>上层项目</dt>
+	<dd>下层项目</dd>
+	<dd>下层项目</dd>
+</dl>
+
+第二种有序列表：
+
+	<ol>	
+		<li>数据的条目</li>
+		<li>数据的条目</li>
+		<li>数据的条目</li>
+	</ol>
+				
+	* ol的属性
+		* type="a"
+		* start="" 从哪开始	
+		
+
+有序列表效果：
+
+<ol>	
+	<li>数据的条目</li>
+	<li>数据的条目</li>
+	<li>数据的条目</li>
+</ol>
+			
+
+第三种无序列表:
+
+	<ul>
+		<li>数据条目</li>
+		<li>数据条目</li>
+		<li>数据条目</li>
+	</ul>	
+	* ul的属性
+		* type=""	circle square
+
+	注：可以通过css把前面的小圆点去掉
+
+无序列表效果：
+
+<ul>
+	<li>数据条目</li>
+	<li>数据条目</li>
+	<li>数据条目</li>
+</ul>	
+
+应用：
+
+![](http://4)
+
+
 ## 06-图片标签
+
+	<img />
+		* 属性：
+			* src="图片的地址"
+			* width="图片的显示宽度"
+			* height:图片显示的高度
+			* alt：图片的说明文字，依赖于浏览器	
+
+
+code:
+
+	<img src="xx" width="60%" height="70%" alt="美女"/>
+
+相对路线的写法
+
+![](http://5)
+
+工具：IETester
+
+可以嵌套
+code：
+
+	<marquee> 
+		<img src="http://img4.duitang.com/uploads/item/201203/28/20120328142832_nQuy8.jpeg"/>
+	</marquee>
+
+效果：
+
+<marquee> 
+	<img src="http://img4.duitang.com/uploads/item/201203/28/20120328142832_nQuy8.jpeg" width="100"/>
+</marquee>
+
+
+图片的热点区域其实就是讲一个图片专门的分割出一个链接区域，这就是热点（了解）
+
 ## 07-超链接标签
+
+> 作用：链接资源 定义资源
+
+
+- 链接资源
+	* 必须要指定属性：href="链接的地址"
+	* 需要编写协议
+		* HTTP
+	* **默认file文件的协议**
+		* 如果浏览器可以解析文件，默认会打开文件。
+		* 如果浏览器不可以解析文件，弹出下载窗口。
+	* 支持自定义协议
+		* 浏览器解析不了的协议，默认找操作系统的引用程序。
+		
+
+code :
+	
+	<a href="http://www.baidu.com">百度</a>
+	<a href="../imgs/1.jpg">图片</a>
+	<a href="../download/1.exe">文件</a>
+	<a href="http://www.xunlei.com/jyfy.avi">电影1</a>
+	<a href="thunder://balabalablabalbal">电影2</a>
+	<a href="mailto:PR@meizu.com">联系我们PR@meizu.com</a>
+
+- 定位资源
+	* name	定义锚点
+	* 点击	href="#锚点名称"
+
+
+code：
+
+	<a name="top">---这是顶部---</a>
+
+	<a href="#top">回到顶部</a>
+
+
+效果：
+
+<a href="#top">回到顶部</a> //怎么不行啊。。。
+
 ## 08-表格标签
+
+> 使用表格标签格式化数据，与列表标签注意区别
+
+表格的应用
+![](http://6)
+
+
+code:
+
+	<table>
+	
+		<caption>用户信息</caption>
+		<tr>
+			<td>name</td>
+			<td>age</td>
+		</tr>
+		
+		<tr>
+			<td>zhangsan</td>
+			<td>18</td>
+		</tr>
+	
+	<table>
+
+效果：
+
+<table border="2" width="100" heith = "200" bgcolor="red" bordercolor="green">
+	<caption>用户信息</caption>
+	<tr>
+		<td>name</td>
+		<td>age</td>
+	</tr>
+	<tr>
+		<td>zhangsan</td>
+		<td>18</td>
+	</tr>
+<table>
+
+
+属性：
+
+
+- table的属性
+	* border:	边框
+	* width:	宽度
+	* height:	高度
+		
+- tr的属性
+	* align:中间的文字的对齐方式	
+		
+- td&th区别：
+	* th中间的内容粗体显示。
+	* th中间的内容默认居中。
+	* th一般用来表格的表头
+			
+- td的属性
+	* width		宽度（一般都不会设置单元格的宽和高的）
+	* height	高度
+	* 合并单元格（值的写法：合并几个单元格，值就写几）
+		* 行合并	rowspan=""
+		* 列合并	colspan=""
+				
+* `<caption></caption>`必须要写在table的中间
+
+
+合并单元格的应用和体现：
+
+![](http://7)
+
+
+
 ## 09-表单标签一
+
+> 收集用户输入的数据
+
+
+	* 表单的标签
+	<form >
+		* form的属性
+			* action="表单的提交路径"
+				* http://www.baidu.com
+				* html页面
+			* method="提交方式（默认是get方式）"（面试题）
+				* form表单的提交方式有哪些？（get和post的区别）
+					* 答：form表单提交方式有很多，常用的有两种post和get
+						* post和get提交方式的区别：
+							* get方式会把参数列表显示在地址栏上，post方式不会（请求体）。
+							* get方式说明网站安全级别较低，post安全级别较高。
+							* get方式不支持大数据，post支持大数据。
+							
+					* 推荐大家使用post方式。
+		
+		* 用户输入的内容
+		<input type="类型" name="名称(必须要指定)" value="是否指定value属性" />
+			* name属性必须要指定，value可以看情况指定
+		
+		* type="text"			普通的文本框
+			* name必须指定
+			
+		* type="password"		密码框
+			* name必须指定
+			
+		* type="radio"			单选按钮
+			* name必须指定	value必须指定
+			* name的属性，值要相同
+			* 默认值：checked=checked或者true
+			
+		* type="checkbox"		多选按钮
+			* name必须指定	value必须指定
+			* 默认值：checked=checked或者true
+			
+		* type="reset"			重置：恢复到最初的状态	
+		* type="submit" 		提交表单
+			* 点击提交后，地址栏发生了变化（?sex=on）
+			* 在普通的文本框上添加name属性 name="username"之后，点击提交，地址栏发生了变化（?username=haha&sex=on）
+				String str = "?username=haha&sex=on";
+			* ?username=zhangsan&password=123&sex=nan&love=zq	
+				
+		* type="file"			选择文件		
+			* name属性指定
+		* type="hidden"			隐藏组件
+			* name指定 value指定	
+			
+		* type="button"			按钮
+			* value="显示的文字"
+			* 和js（javascript）	绑定事件
+		
+		* type="image"			图片
+			* 提交	引入外部的一个文件（图片）
+		
+		* 声明选择框	
+			<select name="city">
+				<option value="bj"></option>
+				<option value="sh"></option>
+			</select>	
+			
+		* <textarea>文本域
+			* rows="行"
+			* clos="列"	
+			* name属性指定
+			* selected="selected"	代表默认值
+	</form>
+
+
 ## 10-表单标签二
 ## 11-表单的form属性
 ## 12-表格和表单
