@@ -268,7 +268,7 @@ code:
 
 应用：
 
-![](http://4)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170111134436.png)
 
 
 ## 06-图片标签
@@ -287,7 +287,7 @@ code:
 
 相对路线的写法
 
-![](http://5)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170111134815.png)
 
 工具：IETester
 
@@ -353,7 +353,7 @@ code：
 > 使用表格标签格式化数据，与列表标签注意区别
 
 表格的应用
-![](http://6)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170111143412.png)
 
 
 code:
@@ -416,7 +416,7 @@ code:
 
 合并单元格的应用和体现：
 
-![](http://7)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170111151138.png)
 
 
 
@@ -467,39 +467,111 @@ code:
 				String str = "?username=haha&sex=on";
 			* ?username=zhangsan&password=123&sex=nan&love=zq	
 				
-		* type="file"			选择文件		
-			* name属性指定
-		* type="hidden"			隐藏组件
-			* name指定 value指定	
-			
-		* type="button"			按钮
-			* value="显示的文字"
-			* 和js（javascript）	绑定事件
 		
-		* type="image"			图片
-			* 提交	引入外部的一个文件（图片）
-		
-		* 声明选择框	
-			<select name="city">
-				<option value="bj"></option>
-				<option value="sh"></option>
-			</select>	
-			
-		* <textarea>文本域
-			* rows="行"
-			* clos="列"	
-			* name属性指定
-			* selected="selected"	代表默认值
 	</form>
 
 
+
+code:
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112102812.png)
+
 ## 10-表单标签二
+
+	* type="file"			选择文件		
+		* name属性指定
+	* type="hidden"			隐藏组件,用处：
+		* name指定 value指定	
+		
+	* type="button"			按钮
+		* value="显示的文字"
+		* 和js（javascript）	绑定事件
+	
+	* type="image"			图片---?这个有提交的效果？
+		* 提交	引入外部的一个文件（图片）
+	
+	* 声明选择框	
+		<select name="city">
+			<option value="bj"></option>
+			<option value="sh"></option>
+		</select>	
+		* selected="selected"	代表默认值
+	* <textarea>文本域
+		* rows="行"
+		* clos="列"	
+		* name属性指定
+		
+
+
+code:
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112110206.png)
+
+
 ## 11-表单的form属性
+
+* form的属性
+	* action="表单的提交路径"
+		* http://www.baidu.com
+		* html页面
+	* method="提交方式（默认是get方式）"（面试题）
+		* form表单的提交方式有哪些？（get和post的区别）
+			* 答：form表单提交方式有很多，常用的有两种post和get
+				* post和get提交方式的区别：
+					* get方式会把参数列表显示在地址栏上，post方式不会（请求体）。
+					* get方式说明网站安全级别较低，post安全级别较高。
+					* get方式不支持大数据，post支持大数据。
+					
+			* 推荐大家使用post方式。
+
+
+
+这是一个GET请求：
+	
+	<a href="http://www.baidu.com?usernam=zhangsan&pwd=123">后台</a>
+
 ## 12-表格和表单
+> table和form的结合：
+
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112140227.png)
+
+
+
 ## 13-多媒体标签
-## 14-框架标签
+
+用的比较少。几乎不用。
+
+	<bgsound="1.mp3" loop="-1">
+
+IE支持
+
+
+## 14-框架标签（了解）
+
+	<frameset rows="150,*">
+		<frame >	代表上半部分
+		<frame >	代表下半部分
+	</frameset>
+	
+>前提条件：不能写在<body>标签的内部和下面
+
+
+	<a href="xx.html" target="_black">用户管理</a>
+	
+	<a href="xx.html" target="right">用户管理</a>
+
+
+code:
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112141821.png)
+
+
 ## 15-简单复习
 
 --------------
 
 Day01 End.
+
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
