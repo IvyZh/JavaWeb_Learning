@@ -150,9 +150,9 @@ HTML语言回顾
 * DOM文档对象模型
 * BOM浏览器对象模型
 
-CSS的用处：
+CSS的用法：
 
-![](http://1)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112155910.png)
 
 
 > CSS （Cascading Style Sheets）是层叠样式表用来定义网页的显示效果。可以解决html代码对样式定义的重复，提高了后期样式代码的可维护性，并增强了网页的显示效果功能。简单一句话：CSS将网页内容和显示样式进行分离，提高了显示功能。
@@ -339,34 +339,250 @@ demo.html:
 	</div>
 			
 
-![](http://2)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112175939.png)
 
 如何横向布局呢？
 
 float文本流。
 
-![](http://3)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112183445.png)
 
-![](http://4)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112183511.png)
 
-![](http://5)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112183625.png)
 
-![](http://6)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112183712.png)
 
-![](http://7)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170112183844.png)
 
 ## 08-js的简介
 
+> Javascript是基于对象和事件驱动的脚本语言，主要应用在客户端。
 
+特点：
+
+- 交互性（信息的动态交互）
+- 安全性（不可以直接访问本地硬盘）
+- 跨平台性（只要是可以解析js的浏览器都可以执行，和平台无关）
+
+HTML--->界面数据的显示
+CSS---->界面样式
+Javascript--->逻辑，交互（网站的动态效果）
+
+
+
+* javascript和java不同（一点关系没有）（雷锋和雷峰塔）
+	* Netscape（网景），静态的效果。livescript（javascript的前身）
+	* java诞生了，升级了，改名（javascript），火了。
+	* 巨头：自己开发一套（jscript）
+	* 找一些公司推出的标准：	SUN	微软	ECMA（欧洲计算机制造协会），联合推出现在的标准。
+	
+	* ECMAScript：标准。基础上扩展。
+	
+	* js的基于对象，java是面向对象。
+	* js解析就可以执行，java先编译再执行。
+	* js是弱类型的语言，java是强类型语言。
+
+
+* javascript语言的组成
+	* ECMAScript	标准（js的语法，变量，函数）
+	* BOM			（Browser Object Model）	浏览器对象模型
+	* DOM			（Document Object Model）	文档对象模型	
 
 
 ## 09-js与HTML的结合方式
+
+
+1. js代码直接写在html里面
+	1. HTML的文件提供了一个标签	<script type="text/javascript">js的代码</script>，标签可以放在HTML文件的任意位置上。head body 都可以，推荐放在body后面
+	2. js代码又三种注释方式
+
+
+code:
+
+	<html>
+		...
+		<script type="text/javascript">
+			window.alert("hehe");
+		</script>
+		...
+	</html>
+
+2. 引入外部js文件,`<script src="引入js文件（相对路径）" >`,如果script通过src的属性引入了外部的文件，里面的js代码就不会执行了。
+
+demo.js
+
+	alert("hehe");
+
+xx.html
+
+
+	<html>
+		...
+		<script type="text/javascript" src="demo.js">
+			window.alert("hehe");
+		</script>
+		...
+	</html>
+
+
+F12 打开浏览器调试工具
+
 ## 10-js的基本数据类型和定义变量
+
+
+* 关键字
+	* var	声明变量
+	
+* 标示符
+	* 和java一样
+	
+* 注释
+	* 和java一样
+	
+* 变量		
+	* 声明变量，只使用一个关键字	var num = 12;  var str = "abc"; 
+	* 5种基本数据类型
+		* 5种基本数据类型
+		* Undefined、Null、Boolean、Number 和 String 
+		
+			* String		字符串类型
+				* js中双引号和单引号都代表的是字符串
+			* Number		数字类型
+				* 不区分整数和小数
+			* Boolean		布尔类型
+			* Null			空，给引用赋值的
+			* Undefined		未定义（声明变量，没有赋值）
+		
+		* 声明变量，使用var关键字	
+		* typeof() 判断当前变量是什么类型的数据
+			* var num = 12;num = "123";
+			* alert(typeof(num));// number,string
+			*　var data = null;alert(typeof(data));//object
+			*　var d;alert(typeof(d));//undefined
+
+
+code:
+
+	num2 = 2
+	alert(num2);// 不加分号，不写关键字也是ok的，但不建议这么做。
+
+
+			
 ## 11-js的运算符
+
+参考工具：w3school
+
+* 算术运算符
+	* 0或者null是false，非0或者非null是true，默认用1表示。
+	
+		var num = 3710;
+		alert(num/1000*1000);// 3710
+		
+		var n = "12";
+		alert(n-1);//11
+
+		alert("abc"-1);//Nan
+		* 不区分整数和小数
+
+> Javascript中小数和整数都是数字类型，所以除法中没有整数，会出现小数。
+
+> 字符串与数字相加，是字符串链接，如果相减，字符串直接转换成数字再相减。
+
+> Boolean类型可以进行运算，false就是0或者null，非0非空是true，默认用1显示。
+
+> ++ -- 等和java中一样。
+
+
+
+	var num = 123;
+	
+	if(num = 1){// 这里应该是用==
+		alert("ok");//会弹出来
+	}else{
+		alert("no equeal");
+	}
+
+
+* 赋值运算符
+	* 和java是一样的
+* 比较运算符
+	* ==	比较值是否相同
+	* ===	**比较值和类型是否相同**
+* 逻辑运算符
+	* 和java中一样
+
+* 三元运算符
+	条件?值1:值2
+
 ## 12-结束的语句
+
+判断语句 if...else,switch
+
+循环语句 for(var i = 0;i<5;i++){},while,do...while
+
+
+document.write("文本内容");// 文本内容可以输出HTML代码
+
+
 ## 13-99乘法表
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170113160139.png)
+
+
 ## 14-js的数组
+
+* js的数组
+	* java	String [] str = {};
+	* 声明数组
+		* var arr = [12,34,55];
+		* var arr = new Array(5);		声明数组，长度是5
+		* var arr = new Array(2,3,4);	声明数组，元素是2 3 4
+		
+	* 数组的属性
+		* 长度：length
+		* 数组的长度是可变的。 arr[3] = 9;//ok
+		* arr[4] = "abc";//ok
+
+> document.write(arr);// 12,34,55,9
+
+
+
+
+
 ## 15-js的函数
+
+
+* js的方法
+	* java中	public String 方法名称(参数列表(int num,String str)){
+					方法体;
+					return null;
+				}
+				
+	* js中，通过关键字function	声明方法。
+		
+		function 方法名称(参数列表 (num,str)){
+			方法体;
+			return;
+		}
+		
+		* 参数列表：**不能使用var关键字**
+		* 返回值：可写可不写的，如果有写返回值，如果没有，返回值可以省略不写。
+		
+	* 调用执行。	
+	
+	* 在函数的内部，有一个数组，装传过来的参数的
+		* arguments:这是一个参数
+
+	* Javascript中不存在重载形式。
+
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170113162202.png)
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170113162557.png)
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170113162946.png)
+
 ## 16-复习
 
 --------------
