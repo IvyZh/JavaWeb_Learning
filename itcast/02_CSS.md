@@ -393,7 +393,7 @@ Javascript--->逻辑，交互（网站的动态效果）
 ## 09-js与HTML的结合方式
 
 
-1. js代码直接写在html里面
+* 1.js代码直接写在html里面
 	1. HTML的文件提供了一个标签	<script type="text/javascript">js的代码</script>，标签可以放在HTML文件的任意位置上。head body 都可以，推荐放在body后面
 	2. js代码又三种注释方式
 
@@ -408,7 +408,7 @@ code:
 		...
 	</html>
 
-2. 引入外部js文件,`<script src="引入js文件（相对路径）" >`,如果script通过src的属性引入了外部的文件，里面的js代码就不会执行了。
+* 2.引入外部js文件,`<script src="引入js文件（相对路径）" >`,如果script通过src的属性引入了外部的文件，里面的js代码就不会执行了。
 
 demo.js
 
@@ -432,7 +432,7 @@ F12 打开浏览器调试工具
 
 
 * 关键字
-	* var	声明变量
+	* var	声明变量   function 声明函数
 	
 * 标示符
 	* 和java一样
@@ -458,8 +458,8 @@ F12 打开浏览器调试工具
 		* typeof() 判断当前变量是什么类型的数据
 			* var num = 12;num = "123";
 			* alert(typeof(num));// number,string
-			*　var data = null;alert(typeof(data));//object
-			*　var d;alert(typeof(d));//undefined
+			* var data = null;alert(typeof(data));//object
+			* var d;alert(typeof(d));//undefined
 
 
 code:
