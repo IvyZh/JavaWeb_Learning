@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li>广州</li>
+	</ul>
+	
+</body>
+	<script type="text/javascript">
+		/* 
+			需求：在ul无序列表下，添加一个子节点。<li>深圳</li>
+		*/
+		
+		// 创建元素对象
+		var li = document.createElement("li");
+		// 创建文本的对象
+		var text = document.createTextNode("深圳");
+		// 把文本对象添加到元素对象下面，作为子节点
+		li.appendChild(text);
+		// 获取ul
+		var ul = document.getElementsByTagName("ul")[0];
+		// 把元素对象添加ul的下面，作为子节点
+		ul.appendChild(li);
+	</script>
+</html>

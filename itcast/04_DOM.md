@@ -125,7 +125,7 @@
 DOM要操作标记型文档必须先进行解析。
 
 
-![](http://1)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117102729.png)
 
 ## 03-DOM的三个级别和DHTML
 
@@ -148,7 +148,7 @@ DOM要操作标记型文档必须先进行解析。
 
 * BOM 和HTML DOM关系图
 
-![](http://2)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117103303.png)
 
 
 * Document：代表整个文档。
@@ -161,12 +161,12 @@ DOM要操作标记型文档必须先进行解析。
 		* createTextNode("文本内容")		创建文本对象
 		* appendChild("子节点")				添加子节点
 		
-![](http://3)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117104007.png)
 
 
 
 > 在ul无序列表下，添加一个子节点
-![](http://4)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117104730.png)
 
 
 
@@ -181,7 +181,7 @@ DOM要操作标记型文档必须先进行解析。
 	* 获取元素下的所有子节点（*****）
 		* ul.getElementsByTagName();
 		* document.getElementsByTagName(); 区别
-![](http://5)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117105556.png)
 
 ## 06-Node节点属性
 
@@ -191,7 +191,7 @@ DOM要操作标记型文档必须先进行解析。
 	* nodeValue		：节点的值
 	* parentNode	获取父节点（永远是一个元素节点）
 
-![](http://6)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117111705.png)
 
 
 	IE6-8                                 IE9-10 Chrome FireFox
@@ -234,13 +234,12 @@ code:
 
 
 无序列表的内容替换：
-
-![](http://7)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117113920.png)
 
 
 复制按钮到span区域：
 
-![](http://8)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117114500.png)
 
 ---
 下午。
@@ -260,7 +259,7 @@ code:
 		onfocus		获取焦点事件
 		onblur		失去焦点事件
 
-![](http://9)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117151906.png)
 
 ## 09-全选练习
 
@@ -272,22 +271,20 @@ code:
 
 ## 10-下拉列表左右选择
 
-![](http://10)
-
-![](http://11)
-
-![](http://12)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117152946.png)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117153751.png)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117153900.png)
 
 双击ondblclick
 
 
-![](http://13)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117154245.png)
 
 
 ## 11-省市联动
 
 
-![](http://14)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170117154425.png)
 
 
 select-->onchange(this.value)

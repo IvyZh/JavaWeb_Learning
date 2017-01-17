@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	
+	<input type="checkbox" id="boxId" onclick="selOrNo()"/>全选/全不选<br/>
+	<input type="checkbox" name="love" />篮球<br/>
+	<input type="checkbox" name="love" />足球<br/>
+	<input type="checkbox" name="love" />排球<br/>
+	<input type="checkbox" name="love" />冰球<br/>
+	<input type="button" value="全选" onclick="selAll()"/>
+	<input type="button" value="全不选" onclick="selNo()"/>
+	<input type="button" value="反选" onclick="selOth()"/>
+	
+</body>
+	<script type="text/javascript">
+		/* 
+			* 思路：
+				全选：获取名称是love的所有的input标签
+				循环遍历，为了拿到每一个input标签，同时，设置checked
+		*/
+		// 全选
+		function selAll(){
+			// 获取名称是love的所有的input的标签，返回是数组
+			var inputs = document.getElementsByName("love");
+			// 为了拿到每一个input标签，同时，设置checked
+			for(var i=0;i<inputs.length;i++){
+				// 获取每一个input对象
+				var input = inputs[i];
+				// 设置checked属性
+				input.checked = true;
+			}
+		}
+		
+		// 全不选
+		function selNo(){
+			// 获取名称是love的所有的input标识
+			var inputs = document.getElementsByName("love");
+			for(var i=0;i<inputs.length;i++){
+				var input = inputs[i];
+				input.checked = false;
+			}
+		}
+		
+		// 反选
+		function selOth(){
+			// 获取名称是love的所有的input的标签，返回是数组
+			var inputs = document.getElementsByName("love");
+			// 为了拿到每一个input标签，同时，设置checked
+			for(var i=0;i<inputs.length;i++){
+				// 获取每一个input对象
+				var input = inputs[i];
+				// 判断，当前的input标签的checked属性，是否是为true，如果是true，设置成false，反之。
+				/* if(input.checked == true){
+					input.checked = false;
+				}else{
+					input.checked = true;
+				} */
+				
+				input.checked = !input.checked;
+			}
+		}
+		
+		// 全选/全不选
+		function selOrNo(){
+			// 获取第一个input对象
+			var box = document.getElementById("boxId");
+			// 判断，判断是否被选中
+			if(box.checked == true){
+				// 调用全选的方法
+				selAll();
+			}else{
+				selNo();
+			}
+		}
+		
+	</script>
+</html>
+
+
+
+
+
+
+
+
+

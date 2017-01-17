@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<input type="text" id="nameId" value="zhangsan" />
+	
+	<ul id="ulId">
+		<li>北京</li>
+		<li>上海</li>
+		<li>广州</li>
+	</ul>
+	
+</body>
+	<script type="text/javascript">
+		/* 
+			* 获取元素对象
+				* getAttribute("属性名称");	获取属性的值
+				* setAttribute("属性名称","属性的值");	设置或者修改属性的值
+				* removeAttribute("属性名称");		删除属性
+				
+			* 获取元素下的所有子节点（*****）
+				* ul.getElementsByTagName();
+		*/
+		var input = document.getElementById("nameId");
+		// alert(input.value);
+		// alert(input.getAttribute("value"));
+		
+		// 修改
+		//input.setAttribute("value", "zhaosi");
+		//alert(input.getAttribute("value"));
+		
+		input.removeAttribute("value");
+		//alert(input.getAttribute("value"));
+		
+		// ============================================================================
+		var ul = document.getElementById("ulId");
+		var lis = ul.childNodes;
+		// alert(lis.length);
+		
+		var lis2 = ul.getElementsByTagName("li");
+		alert(lis2.length);
+		
+	</script>
+</html>
