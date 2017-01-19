@@ -66,7 +66,7 @@
 		* 表单的校验。
 
 
-![](http://1)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118153154.png)
 
 
 正则表达式 /^表达式$/.test(string);返回true或者false
@@ -76,7 +76,7 @@
 
 ## 03-js提交表单
 
-![](http://2)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118153909.png)
 
 ## 04-XML的简介
 
@@ -94,7 +94,7 @@
 
 XML技术用于解决什么问题?
 
-![](http://3)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118162026.png)
 	
 * 应用
 	* 作为配置文件。
@@ -141,7 +141,7 @@ XML技术用于解决什么问题?
 		* 产生的原因：保存文件时和打开文件时采用的编码不一致。
 		* 解决办法：保存文件可打开文件采用的编码一致就ok。（MyEclipse不会产生乱码问题）
 
-![](http://4)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118172716.png)
 
 
 ## 06-XML的元素、属性和特殊字符
@@ -195,7 +195,7 @@ XML技术用于解决什么问题?
 * PI（处理指令）（忘了）
 	* 替换HTML(country.xml)
 
-![](http://5)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118200653.png)
 
 
 语法总结：
@@ -229,11 +229,11 @@ code:
 
 book.xml
 
-![](http://6)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118201525.png)
 
-![](http://7)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118201721.png)
 
-![](http://8)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170118201825.png)
 
 
 
@@ -280,7 +280,7 @@ book.xml
 	* 引入网络上的DTD文件
 		<!DOCTYPE 根节点 PUBLIC "DTD文件名称" "DTD文件的地址">
 
-![](http://9)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119104208.png)
 
 
 ## 11-定义元素
@@ -290,26 +290,26 @@ book.xml
 	属性定义
 	实体定义
 
-![](http://10)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119104911.png)
 
 ## 12-定义属性
 
 
-![](http://11)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119113643.png)
 
-![](http://12)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119113758.png)
 
 
 
 ## 13-属性语法和定义实体
 
-![](http://13)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119162154.png)
 
 * 实体定义（用的不多）	
 	* <!ENTITY 别名 "值" >
 	* 需要在xml中引入别名，浏览器打开文件后，在引入的位置上显示值的。
 
-![](http://14)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119162405.png)
 
 
 ## 14-DTD的文档
@@ -320,9 +320,7 @@ w3c文档上也有。
 
 ## 15-解析XML编程的简介
 
-
-![](http://15)
-
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119165430.png)
 
 * 解析XML的方式有哪些呢？
 	* 常用的有两种？DOM和SAX 
@@ -349,7 +347,7 @@ w3c文档上也有。
 	- DOM
 	- SAX
 
-![](http://16)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119171220.png)
 
 DOM：
 
@@ -366,18 +364,18 @@ DOM：
 
 练习，解析book.xml
 
-![](http://17)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119172408.png)
 
 ## 17-JAXP的添加子节点
 
 需求：在第二本下末尾添加子节点
 
-![](http://18)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119172834.png)
 
 ## 18-JAXP的封装和删除节点
 
 
-![](http://19)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170119173516.png)
 
 
 ## 19-简单复习
