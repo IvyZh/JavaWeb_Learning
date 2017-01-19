@@ -268,18 +268,118 @@ book.xml
 ## 10-DTD与XML的三种结合方式
 
 
+* DTD与XML文档的关联方式
+	* 可以在XML的文件中直接书写DTD的代码。（经常使用）
+		<!DOCTYPE 根节点 [
+			DTD的代码
+		]>
+	
+	* 引入本地的DTD文件（经常使用）
+		<!DOCTYPE 根节点 SYSTEM "DTD文件的地址">
+	
+	* 引入网络上的DTD文件
+		<!DOCTYPE 根节点 PUBLIC "DTD文件名称" "DTD文件的地址">
 
-
+![](http://9)
 
 
 ## 11-定义元素
+
+	DTD:
+	元素定义
+	属性定义
+	实体定义
+
+![](http://10)
+
 ## 12-定义属性
+
+
+![](http://11)
+
+![](http://12)
+
+
+
 ## 13-属性语法和定义实体
+
+![](http://13)
+
+* 实体定义（用的不多）	
+	* <!ENTITY 别名 "值" >
+	* 需要在xml中引入别名，浏览器打开文件后，在引入的位置上显示值的。
+
+![](http://14)
+
+
 ## 14-DTD的文档
+
+w3c文档上也有。
+
+> 看约束文档写xml文件
+
 ## 15-解析XML编程的简介
+
+
+![](http://15)
+
+
+* 解析XML的方式有哪些呢？
+	* 常用的有两种？DOM和SAX 
+	* 区别：
+		- DOM解析XML
+		  * 在内存中形成树状结构
+		  * 缺点：如果文档过大，容易产生内存溢出的问题。  
+		  * 优点：方便做增删改的操作	
+			
+		- SAX解析
+		  * 基于事件驱动，边读边解析
+		  * 优点：不会产生内存溢出问题。
+		  * 缺点：不能做增删改操作。（DOM4J在内存生成树状结构）
+
+- JAXP SUN提供的
+- DOM4J 企业都在用 DOM4J提供的
+- JDOM（不讲了）
+
+
+
 ## 16-JAXP的DOM方式入门
+
+- JAXP解析XML
+	- DOM
+	- SAX
+
+![](http://16)
+
+DOM：
+
+	* DocumentBuilderFactory	：解析器工厂类
+	* DocumentBuilder	获取解析器对象
+	* 解析XML（Document parse(String uri) ）
+		// 获取解析器工厂类
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		// 获取解析器对象
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		// 解析XML的文档，返回document对象
+		Document document = builder.parse("src/book2.xml");
+
+
+练习，解析book.xml
+
+![](http://17)
+
 ## 17-JAXP的添加子节点
+
+需求：在第二本下末尾添加子节点
+
+![](http://18)
+
 ## 18-JAXP的封装和删除节点
+
+
+![](http://19)
+
+
 ## 19-简单复习
 
 --------------
