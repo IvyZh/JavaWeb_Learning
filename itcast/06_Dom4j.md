@@ -63,7 +63,10 @@ XML Schema是用一套预先规定的XML元素和属性创建的，这些元素�
 
 Schema相对于DTD的明显好处是，XML Schema文档本身也是XML文档，而不是像DTD一样使用自成一体的语法
 
-6：00
+schema的快速入门:
+
+
+
 
 
 ## 05-schema的快速入门总结
