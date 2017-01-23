@@ -35,7 +35,7 @@
 		* transform(new DOMSource(document),new StreamResult(path));
 
 
-![](http://1)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 ## 03-schema的简介和DTD的对比
 
@@ -47,7 +47,7 @@
 	* JAXP的SAX解析
 	* DOM4J解析
 
-![](http://2)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 * schema和DTD的对比（面试题）：
@@ -65,11 +65,11 @@ Schema相对于DTD的明显好处是，XML Schema文档本身也是XML文档，�
 
 schema的快速入门:
 
-![](http://3)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
-![](http://4)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
-![](http://5)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 ## 05-schema的快速入门总结
@@ -109,17 +109,17 @@ schema的快速入门:
 
 ## 06-schema的文档和名称空间的概念
 
-![](http://6)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 w3c文档.
 
 
-![](http://7)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 练习：Company.xsd  department.xsd company.xml
 
 
-![](http://8)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 ## 07-JAXP的SAX解析
@@ -152,11 +152,11 @@ w3c文档.
 	事件处理器由程序员编写，程序员通过事件处理器中方法的参数，
 	就可以很轻松地得到sax解析器解析到的数据，从而可以决定如何对数据进行处理。
 
-![](http://9)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 ## 08-JAXP的SAX解析快速入门
 
-![](http://10)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 ---
@@ -165,7 +165,7 @@ w3c文档.
 
 ## 09-JAXP的SAX解析
 
-![](http://11)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 
@@ -191,30 +191,53 @@ index.html说明文档
 ## 11-DOM4J获取作者的文本内容
 
 
-![](http://12)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 ## 12-在末尾添加子节点
 
-![](http://13)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 ## 13-在指定的位置添加子节点
 
 
-![](http://14)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 ## 14-删除和修改文档
 
+删除：
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
-
+修改：
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
 
 
 ## 15-DOM4J对XPATH的支持
+
+* DOM4J对XPATH的支持
+	* 导入包。jaxen-1.1-beta-6.jar。
+	* 怎么使用？
+		selectNodes("/AAA")			返回集合
+		selectSingleNode()		一个Node对象
+		
+	* 参数就是xpath的语法
+		* /AAA/BBB			获取BBB的节点
+		* //BBB				无论层级关系，找到BBB的节点
+		* *					代表是所有
+		* /AAA/BBB[1]		找到BBB的第一个		/AAA/BBB[last()]	最后一个
+		* @					属性
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE.png)
+
+
 ## 16-扩展内容
+
+
+项目：stu
 
 -------------- 
 
-Day02 End.
+Day06 End.
 
 
 
