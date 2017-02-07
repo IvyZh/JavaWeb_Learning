@@ -141,16 +141,15 @@
 		* HelloServlet.java:4: 软件包 javax.servlet 不存在
 		* set classpath=%classpath%;servlet-api.jar	设置临时的环境变量，只对当前的窗口有效。
 
-![](http://1)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206161904.png)
 
-![](http://2)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206161951.png)
 
 ## 03-使用MyEclipse开发Servlet和执行过程
 
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206162339.png)
 
-![](http://3)
-
-![](http://4)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206163003.png)
 
 ## 04-Servlet的生命周期
 
@@ -210,10 +209,11 @@
 ## 06-Servlet模板的修改
 
 
-![](http://5)
-![](http://6)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206181333.png)
 
-![](http://7)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206181437.png)
+
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170206181610.png)
 
 
 
@@ -226,7 +226,7 @@
 	* 千万别解压，右键--选择压缩工具打开--templates--Servlet.java
 	* 拖回去之前，先MyEclipse关闭。
 
-![](http://8)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207094643.png)
 
 ## 07-Servlet自动加载
 
@@ -266,14 +266,14 @@
 
 
 
-![](http://9)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207102934.png)
 
 ## 09-WEB开发中路径的问题
 
 
-![](http://10)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207104003.png)
 
-![](http://11)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207104208.png)
 
 
 	* WEB开发中路径的问题	
@@ -290,7 +290,7 @@
 			* 从2.html访问demo5：../demo5
 
 
-![](http://12)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207105136.png)
 
 
 	* 绝对路径（推荐使用）
@@ -323,13 +323,13 @@
 	* Enumeration getInitParameterNames()  	    获取初始化参数的名称们
 
 
-![](http://13)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207132921.png)
 
-![](http://14)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207133313.png)
 
 ## 11-ServletContext对象获取初始化参数
 
-![](http://15)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207133609.png)
 
 	* ServletContext对象（域对象）	（*****）
 		* 定义：WEB容器在启动时，它会为每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用。
@@ -359,30 +359,31 @@
 				InputStream getResourceAsStream(String path)  	通过文件的地址获取输入流
 				String getRealPath(String path)  		通过文件的地址获取文件的绝对磁盘路径
 
-![](http://16)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207134516.png)
 
-![](http://17)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207134559.png)
+
 ## 12-ServletContext对象共享数据
 
 
-![](http://18)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207135049.png)
 
-![](http://19)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207135127.png)
 
 
 ## 13-ServletContext读取资源文件
 
-![](http://20)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207135244.png)
 
 
 
 注意读取文件的位置：是在tomcat服务器bin目录下。
 
-![](http://21)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207135707.png)
 
-![](http://22)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207140535.png)
 
-![](http://23)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207141156.png)
 
 
 ## 14-响应头
@@ -402,19 +403,19 @@
 
 重定向：
 
-![](http://24)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207142017.png)
 
-![](http://25)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207142037.png)
 
 定时跳转：
 
-![](http://26)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207142316.png)
 
 
 
 ## 15-控制缓存
 
-![](http://27)
+![](https://github.com/IvyZh/JavaWeb_Learning/blob/master/imgs/itcast/QQ%E6%88%AA%E5%9B%BE20170207142537.png)
 
 ## 16-简单复习
 
