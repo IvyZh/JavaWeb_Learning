@@ -140,15 +140,105 @@ CheckcodeServlet
 - 旋转
 ## 12-验证码与登陆页面的结合
 
+![](http://11)
 
-
+![](http://12)
 
 ## 13-request对象简介和获取客户机信息
+
+![](http://13)
+
+	getRemoteAddr（*****）	获取IP地址
+	getMethod()	（*****） 			获取请求方式
+	getContextPath()（*****）		获取虚拟路径
+
 ## 14-获取请求头
+
+![](http://14)
+
+	String getHeader(String name)  		
+	long getDateHeader(String name)  	
+	int getIntHeader(String name)  		
+	
+	* 请求头
+		referer				记住当前网页的来源
+		User-Agent			判断浏览器
+		if-modified-since	控制缓存
+
 ## 15-获取请求参数
+
+![](http://15)
+
+![](http://16)
+
+![](http://17)
+
 ## 16-request获取中文乱码的问题
+
+乱码问题解决：
+	* POST请求乱码 ：request.setCharacterEncoding("utf-8"); 
+
+
+Get:
+
+
+* GET请求乱码
+
+		解决方案一：修改tomcat/conf/server.xml 
+			<Connector port="80" protocol="HTTP/1.1" 
+					   connectionTimeout="20000" 
+					   redirectPort="8443" URIEncoding="utf-8"/>
+		* 必须有修改tomcat服务器配置文件权限
+		
+		解决方案二：逆向编解码
+		username = URLEncoder.encode(username, "ISO8859-1");
+		username = URLDecoder.decode(username, "utf-8");
+		
+		解决方案三：简写的方式（推荐使用）
+		username = new String(username.getBytes("ISO-8859-1"),"utf-8");
+		
+* request获取中文数据乱码（总结：）
+	* post提交
+		* 设置request缓冲区的编码
+			request.setCharacterEncoding("utf-8"); 
+	* get提交
+		* String构造方法
+			username = new String(username.getBytes("ISO-8859-1"),"utf-8");
+
+
 ## 17-转发和重定向和request域对象
+
+![](http://18)
+
+重定向和转发的区别（转发）（*****）
+	
+	* 域对象
+		ServletContext：服务器一启动，为每个web应用创建一个ServletContext对象，所有servlet实例共享对象。	
+		request：一次请求的范围。
+		
+	* setAttribute("","");
+	* getAttribute("");
+	* removeAttribute("");
+	
+	
+	* getRequestDispatcher(String path) ，返回是RequestDispatcher：对象
+	* RequestDispatcher：
+		* forward(ServletRequest request, ServletResponse response)（经常使用） 转发的方法
+		* include(ServletRequest request, ServletResponse response)（了解） 包含
+
+
+
+
+![](http://19)
+
+![](http://20)
+
 ## 18-使用转发登陆验证
+
+![](http://21)
+
+![](http://22)
+
 ## 19-简单复习
 
 --------------
