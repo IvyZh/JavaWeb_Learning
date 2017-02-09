@@ -122,9 +122,13 @@ ie的cookie禁止了，jd上：
 		  </error-page>
 
 
+需要把errorpage给去掉。
 
-【b】
 ## 05-page指令二
+
+
+
+
 ## 06-include页面包含
 ## 07-taglib指令
 ## 08-JSP的内置对象一out
