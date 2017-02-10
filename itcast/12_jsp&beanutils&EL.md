@@ -126,16 +126,132 @@ ie的cookie禁止了，jd上：
 
 ## 05-page指令二
 
+![](http://11)
 
-
+![](http://12)
 
 ## 06-include页面包含
+
+
+	* include	：包含页面（页面布局）
+		* 语法：<%@ include file="要包含文件的地址（静态包含）" %>
+		* <%@ include file="/include/head.jsp" %>
+
+
+
+
+
+
+![](http://13)
+
+![](http://14)
+
+![](http://15)
+
+![](http://17)
+
+
+
+
+
 ## 07-taglib指令
+
+	* taglib	：引入标签库文件（明天）
+			* 语法：<%taglib  %>
+			* 属性:
+				* uri		：引入标签库文件的名称
+				* prefix	：标签库的前缀名
+
+
+
+![](http://18)
+
 ## 08-JSP的内置对象一out
+
+
+![](http://19)
+
+
+	* JSP的内置对象（9个）直接使用
+		request response session application out pageContext page config exception
+		
+		内置对象					真实的对象					方法
+		request						HttpServletRequest			setAttribute()	getAttribute()
+		response					HttpServletResponse			addCookie()		getWriter()
+		session						HttpSession					setAttribute()	getAttribute()
+		application					ServletContext				setAttribute()	getAttribute()
+		config						ServletConfig				getInitParameter()	getInitParameterNames()
+		
+		exception					Throwable					getMessage()
+		page						Object						（不使用对象）
+		out						JspWriter					write()		print()
+		pageContext					PageContext					setAttribute()	getAttribute()
+
+
+
+		* exception
+			* 和异常有关的
+			* 前提条件：isErrorPage="true"，才能使用exception对象。
+		* page	
+			* 当前页面的对象。
+		* out对象
+			JspWriter			  PrintWriter  response.getWriter()
+			
+			<%= "HELLO" %>
+			<% out.print("AAAA"); %>
+			<% response.getWriter().print("BBBB"); %>
+			<% out.print("CCCC"); %>
+			* 输出结果：
+			
+		
+
+
+![](http://20)
+
+![](http://21)
+
 ## 09-pageContext对象一
+
+
+* pageContext对象
+	* 域对象
+		* 自己存取值
+		* 向其他的域存取值。
+			* setAttribute(String name, Object value, int scope) 
+			* getAttribute(String name, int scope) 
+			* findAttribute(String name) 
+			
+	* 可以获取其他8个对象。
+		* 编写框架或者通用性较高代码。
+
+===
+
+pm
+
 ## 10-pageContext对象二
+
+
+![](http://22)
+
 ## 11-JSP的动态标签一
+
+![](http://23)
+
+![](http://24)
+
+
+![](http://25)
+
+![](http://26)
+
+![](http://27)
+
 ## 12-JavaBean概念和使用传统方式封装数据
+
+
+
+
+
 ## 13-使用JSP的动作标签封装数据
 ## 14-内省简介和测试类代码
 ## 15-通过内省的方式完成数据的封装
