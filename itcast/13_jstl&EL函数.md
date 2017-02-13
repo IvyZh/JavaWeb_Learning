@@ -5,8 +5,49 @@
 
 ## 01-课程回顾
 ## 02-jstl的概述
+
+![](http://1)
+
+
+* 下载jar包，导入到工程中
+	- jstl.jar
+	- standard.jar
+
+* 标签库
+	- c.tld		核心的标签库
+	- fn.tld		EL表达式标签库
+
 ## 03-jstl的快速入门
+
+
+	* JSTL的快速入门
+		* 导入相应jar包。
+		* 新建JSP的文件，引入标签库
+			<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+		* 直接使用标签库
+
+
+![](http://2)
+
+这里传统方式输出a = 10的样式？
+
 ## 04-jstl的out标签
+
+
+	<c:out>		输出内容
+		value	：输出的内容（常量或者变量）
+		default	:默认值
+		escapeXml：默认是true，进行转义，设置成false，不转义。
+		
+		代码：
+			<c:out value="Hello"></c:out>
+			<c:out value="${name }"></c:out>
+			<!-- "" -->
+			<c:out value="${ city }" default="北京"></c:out>
+			<c:out value="<a href='#'>超链接</a>" escapeXml="false"/>
+				
+
+
 ## 05-jstl的set、remove和catch标签
 ## 06-jstl的if和choose标签
 ## 07-forEach遍历数据
