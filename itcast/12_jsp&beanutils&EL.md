@@ -250,16 +250,212 @@ pm
 
 
 
+* 什么是JavaBean？
+	* 定义
+		* 必须有一个无参的构造方法
+		* 属性私有化
+		* 私有化的属性必须通过public类型的方法暴露给其它程序，并且方法的命名也必须遵守一定的命名规范。
+			
+				public class User(){
+					private String username;
+					private String password;
+					public void setUsername(){
+						
+					}
+					public void getUsername(){
+						
+					}
+					public void getPassword(){
+						
+					}
+					public void getInfo(){
+						
+					}
+				}
+		
+	* 作用：封装数据。
+
+![](http://28)
 
 
 ## 13-使用JSP的动作标签封装数据
+
+
+![](http://29)
+
+![](http://30)
+
+
 ## 14-内省简介和测试类代码
+提交到servlet程序
+
+
+![](http://31)
+
+![](http://32)
+
+![](http://33)
+
+
 ## 15-通过内省的方式完成数据的封装
+
+![](http://34)
+
+
 ## 16-BeanUtils工具类的使用
+
+资料-beanutils,logging
+
+
+
+* 导入jar包
+	* commons-beanutils-1.8.3.jar
+	* commons-logging-1.1.1.jar
+
+![](http://35)
+
+![](http://36)
+
+* 默认把字符串转换成日期类型
+	* 编写一个类，实现Converter接口。重写该方法。把字符串转换日期。
+	* 在封装数据之前进行注册。ConvertUtils.register(Converter converter, Class clazz) 	Date.class
+
+
+![](http://37)
+
+![](http://38)
+
+
+这样就ok了。
+
+
 ## 17-EL表达式获取域中的值
+
+![](http://39)
+
+
+	* EL表达式
+		* 语法：${ }
+		* 获取（域对象中的）数据
+			<h4>获取域对象中的值</h4>
+			<%
+				pageContext.setAttribute("name", "黄海波");
+				request.setAttribute("name", "美美");
+			%>
+			
+			${ pageScope.name }
+			${ requestScope.name }
+
+
+			<h4>域中数组的值</h4>
+			<%
+				String [] arrs = {"美美","波波","东东","名名"};
+				request.setAttribute("arrs", arrs);
+			%>
+			${ arrs[2] }
+
+			<h4>域中集合的值</h4>
+			<%
+				List<String> list = new ArrayList<String>();
+				list.add("美美");
+				list.add("小凤");
+				list.add("芙蓉");
+				request.setAttribute("list", list);
+			%>
+			${ list[1] }
+
+			<h4>域中Map集合的值</h4>
+			<%
+				Map<String,String> map = new HashMap<String,String>();
+				map.put("aa", "美美");
+				map.put("bb", "小凤");
+				request.setAttribute("map", map);
+			%>
+			${ map.bb }
+
+
+			<h4>域中集合中有对象的值</h4>
+			<%
+				List<User2> uList = new ArrayList<User2>();
+				uList.add(new User2("banzhang","123"));
+				uList.add(new User2("美美","abc"));
+				request.setAttribute("uList", uList);
+			%>
+			${ uList[1].username }
 ## 18-EL表达式运算
+
+
+
+	* 执行运算
+		<h4>加法运算</h4>
+		${ n1 + n2 }
+
+		<h3>关系运算</h3>
+		<h4>大于</h4>
+		${ n1 > n2 }	${ n1 gt n2 }
+
+		<h4>小于</h4>
+		${ n1 < n2 }	${ n1 lt n2 }
+
+		<h4>等于</h4>
+		${ n1 == n2 }	${ n1 eq n2 }
+
+		<h4>不等于</h4>
+		${ n1 != n2 }	${ n1 ne n2 }
+
+		<h4>大于等于</h4>
+		${ n1 >= n2 }	${ n1 ge n2 }
+
+		<h4>小于等于</h4>
+		${ n1 <= n2 }	${ n1 le n2 }
+
+		<h3>逻辑运算</h3>
+		<h4>与</h4>
+		${ n1 > n2 && n3 > n4 }		${ n1 > n2 and n3 > n4 }
+
+		<h4>或</h4>
+		${ n1 > n2 || n3 > n4 }		${ n1 > n2 or n3 > n4 }
+
+		<h4>非</h4>
+		${ !(n1 > n2) }		${ not (n1 > n2) }
+			
+
+
 ## 19-EL获取WEB常用对象
+
+	* 获取WEB开发中的对象
+		pageScope
+		requestScope
+		sessionScope
+		applicationScope
+		
+		param 			获取请求的参数	getParameter()
+		paramValues		获取请求的参数	getParameterValues()
+		
+		header			获取请求头的信息
+		headerValues	获取请求头的信息
+		
+		initParam		获取全局的初始化参数
+		cookie			获取cookie	${cookie.last.value}
+			
+		pageContext
+		
+		<h4>EL的WEB对象</h4>
+		${ param.username }
+
+		<h4>获取请求头</h4>
+		${ header.referer }
+		
+		<h4>获取全局初始化参数</h4>
+		${ initParam.username }
+		
+		<h4>pageContext对象</h4>
+		${ pageContext.request.contextPath }	
+
+
 ## 20-简单复习
+
+
 
 --------------
 
