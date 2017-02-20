@@ -306,14 +306,240 @@ pm.
 
 
 ## 13.滚动结果集介绍
+
+	滚动结果集:(了解)
+		默认得到的ResultSet它只能向下遍历(next()),对于ResultSet它可以设置成是滚动的，可以向上遍历，
+		或者直接定位到一个指定的物理行号.
+		
+		问题:怎样得到一个滚动结果集?
+			
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery(sql);
+			这是一个默认结果集:只能向下执行，并且只能迭代一次。
+			
+			 Statement stmt = con.createStatement(
+                                      ResultSet.TYPE_SCROLL_INSENSITIVE,
+                                      ResultSet.CONCUR_UPDATABLE);
+			ResultSet rs = stmt.executeQuery(sql);
+			这个就可以创建滚动结果集.
+			简单说，就是在创建Statement对象时，不使用createStatement();
+			而使用带参数的createStatement(int,int)
+			
+			
+			Statement createStatement(int resultSetType,
+                          int resultSetConcurrency)
+                          throws SQLException
+						  
+			resultSetType - 结果集类型，它是 ResultSet.TYPE_FORWARD_ONLY、ResultSet.TYPE_SCROLL_INSENSITIVE 或 ResultSet.TYPE_SCROLL_SENSITIVE 之一
+			resultSetConcurrency - 并发类型；它是 ResultSet.CONCUR_READ_ONLY 或 ResultSet.CONCUR_UPDATABLE 之一 
+			  
+			第一个参数值	
+			ResultSet.TYPE_FORWARD_ONLY    该常量指示光标只能向前移动的 ResultSet 对象的类型。
+			ResultSet.TYPE_SCROLL_INSENSITIVE  该常量指示可滚动但通常不受 ResultSet 底层数据更改影响的 ResultSet 对象的类型。
+			ResultSet.TYPE_SCROLL_SENSITIVE  该常量指示可滚动并且通常受 ResultSet 底层数据更改影响的 ResultSet 对象的类型。
+			
+			第二个参数值
+			ResultSet.CONCUR_READ_ONLY    该常量指示不可以更新的 ResultSet 对象的并发模式。
+			ResultSet.CONCUR_UPDATABLE    该常量指示可以更新的 ResultSet 对象的并发模式。
+			
+			以上五个值，可以有三种搭配方式
+				ResultSet.TYPE_FORWARD_ONLY   ResultSet.CONCUR_READ_ONLY   默认
+				ResultSet.TYPE_SCROLL_INSENSITIVE   ResultSet.CONCUR_READ_ONLY 				
+				ResultSet.TYPE_SCROLL_SENSITIVE  ResultSet.CONCUR_UPDATABLE 
+			
+			
+			常用API
+				next()：移动到下一行
+				previous()：移动到前一行
+				absolute(int row)：移动到指定行
+				beforeFirst()：移动resultSet的最前面
+				afterLast() ：移动到resultSet的最后面
+				updateRow() ：更新行数据
+
+![](http://4)
+
 ## 14.dao模式介绍
+
+![](http://5)
+
+	DAO模式
+	DAO模式（Data Access Object 数据访问对象）：在持久层通过DAO将数据源操作完全封装起来，业务层通过操作Java对象，完成对数据源操作
+	* 业务层无需知道数据源底层实现 ，通过java对象操作数据源 
+	
+	DAO模式结构 ：
+	1、数据源（MySQL数据库）
+	2、Business Object 业务层代码，调用DAO完成 对数据源操作
+	3、DataAccessObject 数据访问对象，持久层DAO程序，封装对数据源增删改查，提供方法参数都是Java对象
+	4、TransferObject 传输对象（值对象） 业务层通过向数据层传递 TO对象，完成对数据源的增删改查
+
+
 ## 15.登录操作案例
+
+	使用dao模式完成登录操作
+		1.web层
+			login.jsp  LoginServlet  User
+		2.service层
+			UserService
+		3.dao层
+			UserDao
+
+![](http://6)
+
+
+![](http://7)
+
+
+![](http://8)
+
+![](http://9)
+
+
+
+![](http://10)
+
+
+![](http://11)
 ## 16.关于sql注入与PreparedStatement介绍
+
+![](http://12)
+	sql注入
+		由于没有对用户输入进行充分检查，而SQL又是拼接而成，在用户输入参数时，在参数中添加一些SQL 关键字，
+		达到改变SQL运行结果的目的，也可以完成恶意攻击。
+
+		示例:
+			在输入用户名时  tom' or '1'='1
+			这时就不会验证密码了。
+		解决方案:
+			PreparedStatement(重点)
+			它是一个预处理的Statement，它是java.sql.Statement接口的一个子接口。
+			
+		总结PreparedStatement使用:
+			1.在sql语句中，使用"?"占位
+				String sql="select * from user where username=? and password=?";
+			2.得到PreparedStatement对象
+				PreparedStatement pst=con.prepareStatement(String sql);
+			3.对占位符赋值
+				pst.setXxx(int index,Xxx obj);
+				例如:
+					setInt()
+					setString();
+				参数index,代表的是"?"的序号.注意：从1开始。
+
+			4.执行sql
+				DML：  pst.executeUpdate();
+				DQL:   pst.executeQuery();
+				注意：这两方法无参数
+				
+		关于PreparedStatement优点:
+			1.解决sql注入(具有预处理功能)
+			2.不需要在拼sql语句。
+
+![](http://13)
+
+
+-- 也是sql的注释语句，也经常用作sql注入。
+
 ## 17.注册操作分析(作业)
+
+
+
+
 ## 18.关于自定义异常
+
+
+
 ## 19.大二进制操作
+
+jdbc处理大数据
+	mysql中有大数据
+		blob 大二进制
+			TINYBLOB(255)、BLOB(64kb)、MEDIUMBLOB(16m)和LONGBLOB(4g)
+		text(clob) 大文本
+			TINYTEXT(255)、TEXT(64kb)、MEDIUMTEXT(16m)和LONGTEXT(4g)
+		
+		对于大数据操作，我们一般只有两种 insert  select
+		演示1:
+			大二进制操作
+			create table myblob(
+				id int primary key auto_increment,
+				content longblob
+			)
+			
+			向表中插入数据
+			
+			
+			问题1:java.lang.AbstractMethodError: com.mysql.jdbc.PreparedStatement.setBinaryStream(ILjava/io/InputStream;)V
+				原因:mysql驱动不支持setBinaryStream(int,InputStream);
+				
+			修改成
+				pst.setBinaryStream(1, fis,file.length());
+				原因:因为mysql驱动不支持setBinaryStream(int,InputStream,long);
+				
+			解决:
+				mysql驱动支持setBinaryStream(int,InputStream,int);
+				
+				
+			注意：如果文件比较大，那么需要在my.ini文件中配置
+				max_allowed_packet=64M
+				
+		总结:
+			存
+					pst.setBinaryStream(1, fis, (int) (file.length()));
+			取
+					InputStream is = rs.getBinaryStream("content");
+
+
+
 ## 20.大文本操作
+
+		演示:存储大文本
+			create table mytext(
+				id int primary key auto_increment,
+				content longtext
+			)
+		存储
+			File file = new File("D:\\java1110\\workspace\\day17_3\\a.txt");
+			FileReader fr = new FileReader(file);
+			pst.setCharacterStream(1, fr, (int) (file.length()));
+		获取:
+			Reader r = rs.getCharacterStream("content");
+
+
 ## 21.批处理
+
+	jdbc批处理
+		一次可以执行多条sql语句.
+		
+		在jdbc中可以执行sql语句的对象有Statement,PreparedStatement，它们都提供批处理.
+		
+		1.Statement执行批处理
+			addBatch(String sql);  将sql语句添加到批处理
+			executeBatch(); 执行批处理
+			clearBatch();
+			
+		2.PreparedStatement执行批处理
+			addBatch();
+			executeBatch();
+			clearBatch();
+			
+		以上两个对象执行批处理区别?
+			1.Statement它更适合执行不同sql的批处理。它没有提供预处理功能，性能比较低。		
+			2.PreparedStatement它适合执行相同sql的批处理，它提供了预处理功能，性能比较高。
+			
+		注意;mysql默认情况下，批处理中的预处理功能没有开启，需要开启
+			1.在 url下添加参数
+				url=jdbc:mysql:///day17?useServerPrepStmts=true&cachePrepStmts=true&rewriteBatchedStatements=true
+			2.注意驱动版本
+				Mysql驱动要使用mysql-connector-java-5.1.13以上
+
+
+![](http://14)
+
+![](http://15)
+
+![](http://16)
+
+
 ## 22.复习
 
 
