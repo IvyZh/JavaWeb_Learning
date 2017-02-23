@@ -249,7 +249,18 @@ pm.
 ![](http://9)
 
 
-
+	2.关于页码显示
+		
+		<c:forEach begin="1" end="${pb.totalPage}" var="n" step="1">
+			<a href="/day20_1/findAllByPage?pageNum=${n}&currentPage=${pb.currentPage}">第${n}页</a>&nbsp;&nbsp;
+		</c:forEach>
+		
+		问题:如果页码比较多怎样处理?
+			可以限定页码数，例如:前5后4。
+			
+			这样做，页面的判断条件比较多，可以使用自定义标签。
+			
+			可以在自定义标签中通过java代码来解决判断操作。如果直接在页面上，使用<c:if>代码太乱。
 
 ## 10.Listener介绍以及web中常用监听器
 ## 11.监听web中对象的创建与销毁
