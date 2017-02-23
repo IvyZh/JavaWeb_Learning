@@ -377,8 +377,92 @@ SQL工具：SQLyoy Ultimate
 ![](http://27)
 
 ## 18.customer案例--修改操作
+
+![](http://28)
+
+![](http://29)
+
+
+	5.编辑
+		1.查询，做回显示
+				<a href="${pageContext.request.contextPath}/findById?id=${c.id}">编辑</a>
+			1.创建CustomerFindByIdServlet,得到要查询的id,调用service，得到Custonmer对象。
+			
+			2.将customer对象存储到request域，请求转发到customerInfo.jsp页面。
+			
+			3.在customerInfo.jsp页面展示客户信息
+			
+			注意:客户的id不能修改，所以使用<input type="hidden">
+		2.修改
+			
+			1.注意使用BeanUtils时的类型转换问题
+				
+			2.注意编码问题	
+				post:request.setCharacterEncoding("utf-8");
+				get:手动转换  new String(request.getParameter(name).getBytes("iso8859-1"),"utf-8");
+			
+			3.进行修改操作
+				String sql = "update customer set name=?,gender=?,birthday=?,cellphone=?,email=?,preference=?,type=?,description=? where id=?";
+				修改完成后，在重新查询一次
+				response.sendRedirect(request.getContextPath() + "/findAll");
+
 ## 19.使用自定义标签解决显示问题
+
+![](http://30)
+
+
+	解决关于回显示时的问题:
+		1.性别 应该使用radio
+		
+			使用自定义标签
+				1.定义标签类   extends SimpleTagSupport
+				2.定义tld文件
+					<tag>
+						<name>sex</name><!-- 标签名称 -->
+						<tag-class>cn.itcast.customer.tag.GenderTag</tag-class><!-- 标签类 -->
+						<body-content>empty</body-content><!-- 标签体中内容 -->
+
+						<attribute>
+							<name>gender</name> <!-- 属性名称 -->
+							<required>true</required> <!-- 属性必须有 -->
+							<rtexprvalue>true</rtexprvalue><!-- 属性值可以接收el表达式 -->
+						</attribute>
+					</tag>
+				3.在页面上使用
+					1.使用taglib导入
+					2.使用
+						<my:sex gender="${c.gender}" />
+
+
 ## 20.虚拟主机介绍
+
+
+![](http://31)
+
+![](http://32)
+
+![](http://33)
+
+
+	使用虚拟主机可以将项目部署成顶级域名
+		
+		1.在service.xml文件
+			1.端口修改为80
+			2. 配置主机
+			  <Host name="www.customer.com"  appBase="D:\java1110\workspace\day19_2"
+					unpackWARs="true" autoDeploy="true">
+
+			  
+				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+					   prefix="localhost_access_log." suffix=".txt"
+					   pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+
+					   <Context path="" docBase="D:\java1110\workspace\day19_2\WebRoot" />
+			  </Host>
+			3.在hosts文件中配置
+				127.0.0.1  www.customer.com
+
+
 ## 21.复习与作业
 
 
